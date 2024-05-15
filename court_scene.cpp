@@ -141,7 +141,7 @@ void CourtScene::addPlayerScore(int playerIndex)
     mRightScoreIndicator.setValue(scores[playerIndex]);
   }
   mRemainingPauseTicks = PAUSE_TICKS;
-  if (scores[playerIndex] > 1) {
+  if (scores[playerIndex] > 9) {
     mGame.setScene(std::make_shared<EndgameScene>(mGame));
     Mix_PlayChannel(-1, victorySound, 0);
   }
