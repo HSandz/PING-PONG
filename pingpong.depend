@@ -180,7 +180,7 @@
 	"game.h"
 	"scene.h"
 
-1715766824 d:\onedrive\documents\c++\ping-pong\game.h
+1715767447 d:\onedrive\documents\c++\ping-pong\game.h
 	"scene.h"
 	<array>
 	<string>
@@ -219,4 +219,12 @@
 	"court_scene.h"
 	"game.h"
 	<SDL.h>
+
+1715766863 source:d:\onedrive\documents\c++\ping-pong\game.cpp
+	"game.h"
+	"welcome_scene.h"
+	<SDL.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<iostream>
 
