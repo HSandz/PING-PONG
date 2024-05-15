@@ -131,7 +131,7 @@
 	<SDL.h>
 	<SDL_image.h>
 
-1715756321 d:\onedrive\documents\c++\ping-pong\court_scene.h
+1715769628 d:\onedrive\documents\c++\ping-pong\court_scene.h
 	"ball.h"
 	"center_line.h"
 	"goal.h"
@@ -167,11 +167,12 @@
 1715736960 source:d:\onedrive\documents\c++\ping-pong\center_line.cpp
 	"center_line.h"
 
-1715766683 source:d:\onedrive\documents\c++\ping-pong\court_scene.cpp
+1715771927 source:d:\onedrive\documents\c++\ping-pong\court_scene.cpp
 	"court_scene.h"
 	"endgame_scene.h"
 	"game.h"
 	"wall.h"
+	<iostream>
 	<SDL.h>
 	<time.h>
 	<stdlib.h>
@@ -180,7 +181,7 @@
 	"game.h"
 	"scene.h"
 
-1715768736 d:\onedrive\documents\c++\ping-pong\game.h
+1715771466 d:\onedrive\documents\c++\ping-pong\game.h
 	"scene.h"
 	<array>
 	<string>
@@ -193,7 +194,7 @@
 	<memory>
 	<SDL.h>
 
-1715754623 d:\onedrive\documents\c++\ping-pong\welcome_scene.h
+1715771927 d:\onedrive\documents\c++\ping-pong\welcome_scene.h
 	"scene.h"
 
 1715737911 source:d:\onedrive\documents\c++\ping-pong\goal.cpp
@@ -214,13 +215,13 @@
 1715738431 source:d:\onedrive\documents\c++\ping-pong\wall.cpp
 	"wall.h"
 
-1715754687 source:d:\onedrive\documents\c++\ping-pong\welcome_scene.cpp
+1715771927 source:d:\onedrive\documents\c++\ping-pong\welcome_scene.cpp
 	"welcome_scene.h"
 	"court_scene.h"
 	"game.h"
 	<SDL.h>
 
-1715766863 source:d:\onedrive\documents\c++\ping-pong\game.cpp
+1715771490 source:d:\onedrive\documents\c++\ping-pong\game.cpp
 	"game.h"
 	"welcome_scene.h"
 	<SDL.h>

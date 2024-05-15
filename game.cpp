@@ -18,8 +18,8 @@ Game::Game()
     mResolution({ 800, 600 }),
     mHalfResolution({ mResolution[0] / 2, mResolution[1] / 2 }),
     mPlayerScores({0, 0}),
-    mBackgroundTexture(nullptr),
-    mBackgroundSurface(nullptr),
+    mBackgroundTexture({nullptr, nullptr, nullptr}),
+    mBackgroundSurface({nullptr, nullptr, nullptr}),
     mBackgroundIndex(0),
     mAlternateBackground({"resources/image/space_background.bmp",
                           "resources/image/city_background.bmp",
@@ -78,17 +78,17 @@ void Game::start()
     std::cerr << "Unable to create SDL renderer: " << SDL_GetError() << std::endl;
     return;
   }
-
-
-  mBackgroundSurface = SDL_LoadBMP(mAlternateBackground[mBackgroundIndex].c_str());
-  if (mBackgroundSurface == nullptr) {
+  for (int i = 0; i < 3; i++) {
+    mBackgroundSurface[i] = SDL_LoadBMP(mAlternateBackground[i].c_str());
+    if (mBackgroundSurface[i] == nullptr) {
       std::cerr << "Unable to load background image: " << SDL_GetError() << std::endl;
-  } else {
-      mBackgroundTexture = SDL_CreateTextureFromSurface(mRenderer, mBackgroundSurface);
-      SDL_FreeSurface(mBackgroundSurface);
-      if (mBackgroundTexture == nullptr) {
+    } else {
+      mBackgroundTexture[i] = SDL_CreateTextureFromSurface(mRenderer, mBackgroundSurface[i]);
+      SDL_FreeSurface(mBackgroundSurface[i]);
+      if (mBackgroundTexture[i] == nullptr) {
           std::cerr << "Unable to create texture from background image: " << SDL_GetError() << std::endl;
       }
+    }
   }
 
   // Khởi tạo phông chữ
@@ -121,7 +121,7 @@ void Game::start()
     }
 
     // Render texture nền
-    SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, nullptr);
+    SDL_RenderCopy(mRenderer, mBackgroundTexture[mBackgroundIndex], nullptr, nullptr);
 
     // Cập nhật logic game của cảnh hiện tại
     mScene->onUpdate();
@@ -131,8 +131,8 @@ void Game::start()
     SDL_RenderClear(mRenderer);
 
     // Render cho texture background
-    if (mBackgroundTexture != nullptr) {
-        SDL_RenderCopy(mRenderer, mBackgroundTexture, nullptr, nullptr);
+    if (mBackgroundTexture[mBackgroundIndex] != nullptr) {
+        SDL_RenderCopy(mRenderer, mBackgroundTexture[mBackgroundIndex], nullptr, nullptr);
     }
 
     // Chuyển màu vẽ của renderer sang màu trắng
@@ -202,7 +202,7 @@ bool Game::initAudio() {
 }
 
 bool Game::loadBackgroundMusic(const char* filePath) {
-  // Load the background music
+  // Tải nhạc nền
   mBackgroundMusic = Mix_LoadMUS(filePath);
   if (mBackgroundMusic == nullptr) {
     std::cerr << "Failed to load background music! SDL_mixer Error: " << Mix_GetError() << std::endl;
@@ -212,7 +212,12 @@ bool Game::loadBackgroundMusic(const char* filePath) {
   return true;
 }
 
+void Game::addBackgroundIndex() {
+  // Thay đổi ảnh nền
+  mBackgroundIndex = (mBackgroundIndex + 1) % 3;
+}
+
 void Game::playBackgroundMusic() {
-  // Play the background music on loop
+  // Lặp tải nhạc nền
   Mix_PlayMusic(mBackgroundMusic, -1);
 }

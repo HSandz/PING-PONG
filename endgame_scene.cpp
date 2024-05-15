@@ -18,7 +18,7 @@ EndgameScene::EndgameScene(Game& game)
   // Lấy tham chiếu đến điểm tổng
   const auto& scores = mGame.getPlayerScores();
 
-  mTopicTexture = mGame.createText("SDL2 PONG - RESULTS");
+  mTopicTexture = mGame.createText("PING PONG - RESULTS");
   mEndgameTexture = mGame.createText("Game has ended");
   if (scores[0] > 9) {
     mWinnerTexture = mGame.createText("Left player won the game!");
@@ -100,6 +100,9 @@ void EndgameScene::onKeyUp(SDL_KeyboardEvent& event)
   switch (event.keysym.sym) {
   case SDLK_RETURN:
     mGame.setScene(std::make_shared<WelcomeScene>(mGame));
+    break;
+  case SDLK_SPACE:
+    mGame.addBackgroundIndex();
     break;
   }
 }

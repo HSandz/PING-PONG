@@ -81,5 +81,8 @@ void WelcomeScene::onKeyUp(SDL_KeyboardEvent& event)
   case SDLK_RETURN:
     mGame.setScene(std::make_shared<CourtScene>(mGame));
     break;
+  case SDLK_SPACE:
+    mGame.addBackgroundIndex();
+    break;
   }
 }

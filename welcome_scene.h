@@ -22,7 +22,7 @@ namespace pong
 		void onKeyDown(SDL_KeyboardEvent& event) override;
 		void onKeyUp(SDL_KeyboardEvent& event) override;
 	private:
-		Game&        mGame;
+    Game&        mGame;
     SDL_Texture* mTopicTexture;
     SDL_Texture* mPlayText;
     SDL_Texture* mChangeBackground;

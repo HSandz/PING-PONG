@@ -45,6 +45,8 @@ namespace pong
 
     void playBackgroundMusic();
 
+    void addBackgroundIndex();
+
     Mix_Chunk* getCollisionSound() const { return mCollisionSound; }
 
     SDL_Renderer* getRenderer() const { return mRenderer; }
@@ -57,11 +59,11 @@ namespace pong
     std::array<int, 2>          mResolution;
     std::array<int, 2>          mHalfResolution;
     std::array<int, 2>          mPlayerScores;
-    SDL_Texture*                mBackgroundTexture;
-    SDL_Surface*                mBackgroundSurface;
+    std::array<SDL_Texture*, 3> mBackgroundTexture;
+    std::array<SDL_Surface*, 3> mBackgroundSurface;
+    std::array<std::string, 3>  mAlternateBackground;
     Mix_Music*                  mBackgroundMusic;
     Mix_Chunk*                  mCollisionSound;
-    std::array<std::string, 3>  mAlternateBackground;
     int                         mBackgroundIndex;
   };
 }

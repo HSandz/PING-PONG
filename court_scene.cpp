@@ -3,6 +3,7 @@
 #include "game.h"
 #include "wall.h"
 
+#include <iostream>
 #include <SDL.h>
 #include <time.h>
 #include <stdlib.h>
@@ -116,6 +117,9 @@ void CourtScene::onKeyUp(SDL_KeyboardEvent& event)
     if (mRightPaddle.isMoving(Paddle::Movement::DOWN)) {
       mRightPaddle.setMovement(Paddle::Movement::NONE);
     }
+    break;
+  case SDLK_SPACE:
+    mGame.addBackgroundIndex();
     break;
   }
 }
