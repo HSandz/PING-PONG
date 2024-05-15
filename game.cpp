@@ -18,7 +18,12 @@ Game::Game()
     mResolution({ 800, 600 }),
     mHalfResolution({ mResolution[0] / 2, mResolution[1] / 2 }),
     mPlayerScores({0, 0}),
-    mBackgroundTexture(nullptr)
+    mBackgroundTexture(nullptr),
+    mBackgroundSurface(nullptr),
+    mBackgroundIndex(0),
+    mAlternateBackground({"resources/image/space_background.bmp",
+                          "resources/image/city_background.bmp",
+                          "resources/image/landscape_background.bmp"})
 {
     //...
 }
@@ -74,7 +79,8 @@ void Game::start()
     return;
   }
 
-  mBackgroundSurface = SDL_LoadBMP("resources/image/space_background.bmp");
+
+  mBackgroundSurface = SDL_LoadBMP(mAlternateBackground[mBackgroundIndex].c_str());
   if (mBackgroundSurface == nullptr) {
       std::cerr << "Unable to load background image: " << SDL_GetError() << std::endl;
   } else {
