@@ -21,6 +21,7 @@ Game::Game()
     mBackgroundTexture({nullptr, nullptr, nullptr}),
     mBackgroundSurface({nullptr, nullptr, nullptr}),
     mBackgroundIndex(0),
+    mVolumeValue(MIX_MAX_VOLUME / 2),
     mAlternateBackground({"resources/image/space_background.bmp",
                           "resources/image/city_background.bmp",
                           "resources/image/landscape_background.bmp"})
@@ -99,6 +100,7 @@ void Game::start()
 
   Mix_PlayMusic(mBackgroundMusic, -1);
 
+
   // Khởi tạo cảnh ban đầu của game
   setScene(std::make_shared<WelcomeScene>(*this));
 
@@ -118,6 +120,11 @@ void Game::start()
         mScene->onKeyUp(event.key);
         break;
       }
+      switch (event.key.keysym.sym) {
+      case SDLK_ESCAPE:
+        isRunning = false;
+        break;
+      }
     }
 
     // Render texture nền
@@ -126,14 +133,15 @@ void Game::start()
     // Cập nhật logic game của cảnh hiện tại
     mScene->onUpdate();
 
+    // Đặt âm lượng cho nhạc nền
+    Mix_VolumeMusic(mVolumeValue);
+
     // Xóa nội dung render bằng màu đen
     SDL_SetRenderDrawColor(mRenderer, 0x00, 0x00, 0x00, 0xff);
     SDL_RenderClear(mRenderer);
 
     // Render cho texture background
-    if (mBackgroundTexture[mBackgroundIndex] != nullptr) {
-        SDL_RenderCopy(mRenderer, mBackgroundTexture[mBackgroundIndex], nullptr, nullptr);
-    }
+    SDL_RenderCopy(mRenderer, mBackgroundTexture[mBackgroundIndex], nullptr, nullptr);
 
     // Chuyển màu vẽ của renderer sang màu trắng
     SDL_SetRenderDrawColor(mRenderer, 0xff, 0xff, 0xff, 0xff);
@@ -143,6 +151,7 @@ void Game::start()
 
     // Trình bày bộ đệm được render
     SDL_RenderPresent(mRenderer);
+
   }
 }
 
@@ -199,6 +208,15 @@ bool Game::initAudio() {
   }
 
   return true;
+}
+
+void Game::adjustVolume(bool up) {
+  if (up) {
+    if (mVolumeValue < MIX_MAX_VOLUME) mVolumeValue++;
+  }
+  else {
+    if (mVolumeValue > 0) mVolumeValue--;
+  }
 }
 
 bool Game::loadBackgroundMusic(const char* filePath) {

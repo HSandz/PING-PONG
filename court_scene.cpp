@@ -92,6 +92,12 @@ void CourtScene::onKeyDown(SDL_KeyboardEvent& event)
   case SDLK_DOWN:
     mRightPaddle.setMovement(Paddle::Movement::DOWN);
     break;
+  case SDLK_u:
+    mGame.adjustVolume(false);
+    break;
+  case SDLK_i:
+    mGame.adjustVolume(true);
+    break;
   }
 }
 

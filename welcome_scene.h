@@ -27,6 +27,7 @@ namespace pong
     SDL_Texture* mPlayText;
     SDL_Texture* mChangeBackground;
     SDL_Texture* mQuitText;
+    SDL_Texture* mAdjustVolume;
 	};
 }
 

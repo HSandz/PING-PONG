@@ -91,7 +91,14 @@ void EndgameScene::onExit()
 
 void EndgameScene::onKeyDown(SDL_KeyboardEvent& event)
 {
-  // ...
+  switch (event.keysym.sym) {
+  case SDLK_u:
+    mGame.adjustVolume(false);
+    break;
+  case SDLK_i:
+    mGame.adjustVolume(true);
+    break;
+  }
 }
 
 void EndgameScene::onKeyUp(SDL_KeyboardEvent& event)

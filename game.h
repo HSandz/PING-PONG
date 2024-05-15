@@ -47,6 +47,8 @@ namespace pong
 
     void addBackgroundIndex();
 
+    void adjustVolume(bool up);
+
     Mix_Chunk* getCollisionSound() const { return mCollisionSound; }
 
     SDL_Renderer* getRenderer() const { return mRenderer; }
@@ -65,6 +67,7 @@ namespace pong
     Mix_Music*                  mBackgroundMusic;
     Mix_Chunk*                  mCollisionSound;
     int                         mBackgroundIndex;
+    int                         mVolumeValue;
   };
 }
 
