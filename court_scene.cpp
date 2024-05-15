@@ -30,7 +30,7 @@ CourtScene::CourtScene(Game& game)
   goalSound = Mix_LoadWAV("resources/audio/ting.wav");
   victorySound = Mix_LoadWAV("resources/audio/win.wav");
   mLeftPaddle.setTexture("resources/image/left-paddles.png", mGame.getRenderer());
-  mRightPaddle.setTexture("resources/image/right-paddles.png", mGame.getRenderer());
+  mRightPaddle.setTexture("resources/image/right-paddles.png", mGame.getRenderer());//
 }
 
 CourtScene::~CourtScene()
