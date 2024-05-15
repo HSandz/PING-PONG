@@ -17,13 +17,13 @@ Thư viện sử dụng: STL và SDL2
 
 ### Về Scene
 - Game được chia là những scene sau:
-    1. welcome_scene
-    2. court_scene
-    3. endgame_scene
-Chuyển scene:
-- 1 đến 2: khi ấn nút bắt đầu
-- 2 đến 3: khi 1 trong 2 người chơi chiến thắng
-- 3 đến 1: khi ấn nút bắt đầu lần nữa
+1. welcome_scene
+2. court_scene
+3. endgame_scene
+- Chuyển scene:
+    - 1 đến 2: khi ấn nút bắt đầu
+    - 2 đến 3: khi 1 trong 2 người chơi chiến thắng
+    - 3 đến 1: khi ấn nút bắt đầu lần nữa
 
 
 
