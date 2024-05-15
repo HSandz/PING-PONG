@@ -6,6 +6,7 @@
 #include <array>
 #include <string>
 #include <SDL_mixer.h>
+#include <SDL_image.h>
 
 struct SDL_Window;
 struct SDL_Renderer;
@@ -57,6 +58,7 @@ namespace pong
     std::array<int, 2> mHalfResolution;
     std::array<int, 2> mPlayerScores;
     SDL_Texture*       mBackgroundTexture;
+    SDL_Surface*       mBackgroundSurface;
     Mix_Music*         mBackgroundMusic;
     Mix_Chunk*         mCollisionSound;
   };

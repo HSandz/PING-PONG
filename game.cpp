@@ -74,12 +74,12 @@ void Game::start()
     return;
   }
 
-  SDL_Surface* backgroundSurface = SDL_LoadBMP("resources/image/space_background.bmp");
-  if (backgroundSurface == nullptr) {
+  mBackgroundSurface = SDL_LoadBMP("resources/image/space_background.bmp");
+  if (mBackgroundSurface == nullptr) {
       std::cerr << "Unable to load background image: " << SDL_GetError() << std::endl;
   } else {
-      mBackgroundTexture = SDL_CreateTextureFromSurface(mRenderer, backgroundSurface);
-      SDL_FreeSurface(backgroundSurface);
+      mBackgroundTexture = SDL_CreateTextureFromSurface(mRenderer, mBackgroundSurface);
+      SDL_FreeSurface(mBackgroundSurface);
       if (mBackgroundTexture == nullptr) {
           std::cerr << "Unable to create texture from background image: " << SDL_GetError() << std::endl;
       }

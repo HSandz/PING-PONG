@@ -113,3 +113,110 @@
 	<time.h>
 	<stdlib.h>
 
+1715735020 source:d:\onedrive\documents\c++\ping-pong\aabb.cpp
+	"aabb.h"
+	<cmath>
+
+1715738113 d:\onedrive\documents\c++\ping-pong\aabb.h
+	<array>
+
+1715758228 source:d:\onedrive\documents\c++\ping-pong\ball.cpp
+	"ball.h"
+	"court_scene.h"
+	<iostream>
+
+1715758220 d:\onedrive\documents\c++\ping-pong\ball.h
+	"aabb.h"
+	<array>
+	<SDL.h>
+	<SDL_image.h>
+
+1715756321 d:\onedrive\documents\c++\ping-pong\court_scene.h
+	"ball.h"
+	"center_line.h"
+	"goal.h"
+	"paddle.h"
+	"wall.h"
+	"scene.h"
+	"score_indicator.h"
+	<array>
+	<SDL_mixer.h>
+
+1715738111 d:\onedrive\documents\c++\ping-pong\center_line.h
+	<SDL.h>
+
+1715738317 d:\onedrive\documents\c++\ping-pong\goal.h
+	<SDL.h>
+	"aabb.h"
+
+1715757056 d:\onedrive\documents\c++\ping-pong\paddle.h
+	<SDL.h>
+	"aabb.h"
+
+1715738369 d:\onedrive\documents\c++\ping-pong\wall.h
+	"aabb.h"
+	<SDL.h>
+
+1715738358 d:\onedrive\documents\c++\ping-pong\scene.h
+	<memory>
+
+1715738363 d:\onedrive\documents\c++\ping-pong\score_indicator.h
+	<array>
+	<SDL.h>
+
+1715736960 source:d:\onedrive\documents\c++\ping-pong\center_line.cpp
+	"center_line.h"
+
+1715766683 source:d:\onedrive\documents\c++\ping-pong\court_scene.cpp
+	"court_scene.h"
+	"endgame_scene.h"
+	"game.h"
+	"wall.h"
+	<SDL.h>
+	<time.h>
+	<stdlib.h>
+
+1715738281 d:\onedrive\documents\c++\ping-pong\endgame_scene.h
+	"game.h"
+	"scene.h"
+
+1715766824 d:\onedrive\documents\c++\ping-pong\game.h
+	"scene.h"
+	<array>
+	<string>
+	<SDL_mixer.h>
+	<SDL_image.h>
+
+1715738897 source:d:\onedrive\documents\c++\ping-pong\endgame_scene.cpp
+	"endgame_scene.h"
+	"welcome_scene.h"
+	<memory>
+	<SDL.h>
+
+1715754623 d:\onedrive\documents\c++\ping-pong\welcome_scene.h
+	"scene.h"
+
+1715737911 source:d:\onedrive\documents\c++\ping-pong\goal.cpp
+	"goal.h"
+
+1715735021 source:d:\onedrive\documents\c++\ping-pong\main.cpp
+	"game.h"
+
+1715757131 source:d:\onedrive\documents\c++\ping-pong\paddle.cpp
+	"paddle.h"
+	"court_scene.h"
+	<iostream>
+	<SDL_image.h>
+
+1715735021 source:d:\onedrive\documents\c++\ping-pong\score_indicator.cpp
+	"score_indicator.h"
+
+1715738431 source:d:\onedrive\documents\c++\ping-pong\wall.cpp
+	"wall.h"
+
+1715754687 source:d:\onedrive\documents\c++\ping-pong\welcome_scene.cpp
+	"welcome_scene.h"
+	"court_scene.h"
+	"game.h"
+	<SDL.h>
+
