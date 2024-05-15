@@ -91,6 +91,7 @@ void EndgameScene::onExit()
 
 void EndgameScene::onKeyDown(SDL_KeyboardEvent& event)
 {
+  // Thay đổi âm lượng
   switch (event.keysym.sym) {
   case SDLK_u:
     mGame.adjustVolume(false);

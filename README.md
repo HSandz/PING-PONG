@@ -12,8 +12,9 @@ Thư viện sử dụng: STL và SDL2
 - Pad được trả về vị trí mặc định sau mỗi lần đặt lại.
 
 ## Các tính năng khác:
-- Background, ảnh cho pad và bóng
-- Nhạc nền, âm thanh va chạm
+- Background: có thể thay đổi giữa 3 background khi ấn [SPACE] mọi lúc
+- Music: có nhạc nền, âm thanh va chạm, âm thanh chiến thắng
+- Có thể thay đổi âm lượng nhạc nền; giảm khi ấn [U], tăng khi ấn [I]
 
 ### Về Scene
 - Game được chia là những scene sau:

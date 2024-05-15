@@ -14,7 +14,7 @@ WelcomeScene::WelcomeScene(Game& game)
     mQuitText(nullptr),
     mAdjustVolume(nullptr)
 {
-  mTopicTexture = mGame.createText("SDL2 PONG");
+  mTopicTexture = mGame.createText("PING PONG");
   mPlayText = mGame.createText("Play [ENTER]");
   mChangeBackground = mGame.createText("Change background [SPACE]");
   mAdjustVolume = mGame.createText("Adjust Volume - Up [U] Down [I]");
