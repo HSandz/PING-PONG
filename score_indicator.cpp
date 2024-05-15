@@ -20,15 +20,15 @@ inline void drawLine(SDL_Renderer& renderer, const SDL_Rect& instructions) {
 
 ScoreIndicator::ScoreIndicator(int x, int y, int width, int height) : mValue(0)
 {
-  // calculate the line thickness based on the indicator height.
+  // Tính độ dày
   auto thickness = (height / 5);
 
-  // construct horizontal line draw instructions.
+  // Khởi tạo đường thẳng nằm ngang
   mHLines[HLINE_TOP] = { x, y, width, thickness };
   mHLines[HLINE_MIDDLE] = { x, y + (height / 2) - thickness / 2, width, thickness };
   mHLines[HLINE_BOTTOM] = { x, y + (height - thickness), width, thickness };
 
-  // construct vertical line draw instructions.
+  // Khởi tạo đường thẳng nằm dọc
   mVLines[VLINE_LEFT_TOP] = { x, y, thickness, height / 2 };
   mVLines[VLINE_LEFT_BOTTOM] = { x, y + height / 2, thickness, height / 2 };
   mVLines[VLINE_RIGHT_TOP] = { x + width - thickness, y, thickness, height / 2 };

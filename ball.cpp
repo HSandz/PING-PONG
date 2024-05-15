@@ -26,9 +26,9 @@ Ball::Ball(CourtScene& scene, int x, int y, int width, int height)
 }
 
 void Ball::setTexture(const std::string& path, SDL_Renderer* renderer) {
-    // Clean up old texture
+    // Giải phóng texture cũ
     SDL_DestroyTexture(mTexture);
-    // Load new texture
+    // Tải texture mới
     mTexture = IMG_LoadTexture(renderer, path.c_str());
     if (!mTexture) {
         std::cerr << "Failed to load texture: " << SDL_GetError() << std::endl;

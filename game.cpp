@@ -44,14 +44,14 @@ void Game::start()
     std::cerr << "Unable to initialize SDL: " << SDL_GetError() << std::endl;
     return;
   }
-  // Initialize SDL audio
+  // Khởi tạo audio
   if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
     std::cerr << "SDL_mixer could not initialize! SDL_mixer Error: " << Mix_GetError() << std::endl;
     SDL_Quit();
     return;
   }
 
-  // Load background music
+  // Tải nhạc nền
   mBackgroundMusic = Mix_LoadMUS("resources/audio/background_music.mp3");
   if (mBackgroundMusic == nullptr) {
     std::cerr << "Failed to load background music! SDL_mixer Error: " << Mix_GetError() << std::endl;
